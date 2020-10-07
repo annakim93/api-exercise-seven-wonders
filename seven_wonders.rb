@@ -6,7 +6,7 @@ Dotenv.load
 
 US_BASE_URL = "https://us1.locationiq.com/v1/search.php"
 # EU_BASE_URL = "https://eu1.locationiq.com/v1/search.php"
-DIRECTIONS_URL = "https://us1.locationiq.com/v1/directions/driving/'31.243666,30.048819;31.1342193027636,29.9791509'"
+DIRECTIONS_URL = "https://us1.locationiq.com/v1/directions/driving/31.243666,30.048819;31.1342193027636,29.9791509"
 
 unless ENV['LOCATION_IQ_API_KEY']
   puts "Could not load API key, please store in the environment variable 'LOCATION_IQ_API_KEY'"
@@ -65,9 +65,9 @@ sleep(0.5)
 # p get_driving_directions(cairo, giza)
 
 p DIRECTIONS_URL
-# response = HTTParty.get(DIRECTIONS_URL, query: {
-#     key: LOCATION_IQ_KEY,
-#     format: 'json'
-# })
+response = HTTParty.get(DIRECTIONS_URL, query: {
+    key: LOCATION_IQ_KEY,
+    format: 'json'
+})
 
-# ap response
+ap response
